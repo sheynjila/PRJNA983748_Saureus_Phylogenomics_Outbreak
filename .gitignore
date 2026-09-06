@@ -1,0 +1,13 @@
+config/project.env
+work/
+raw_reads/
+references/*.fasta
+references/*.fasta.gz
+references/*.fna*
+pipeline_phylogenomics_output/
+results/*
+!results/.gitkeep
+.Rhistory
+.Rproj.user/
+__pycache__/
+*.pyc
