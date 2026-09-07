@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 #SBATCH --job-name=phy07_iqtree
+#SBATCH --partition=batch
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=8G
 #SBATCH --time=02:00:00
