@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 #SBATCH --job-name=phy06_alignment
+#SBATCH --partition=batch
 #SBATCH --cpus-per-task=2
 #SBATCH --mem=6G
 #SBATCH --time=00:30:00

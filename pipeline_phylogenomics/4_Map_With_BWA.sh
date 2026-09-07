@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 #SBATCH --job-name=phy04_bwa
+#SBATCH --partition=batch
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=12G
 #SBATCH --time=02:00:00
