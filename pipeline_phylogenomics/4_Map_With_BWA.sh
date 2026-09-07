@@ -14,7 +14,7 @@
 # built against one shared coordinate system.
 ###############################################################################
 set -euo pipefail
-SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+SCRIPT_DIR="${PIPELINE_SCRIPT_DIR:-${SLURM_SUBMIT_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)}}"
 source "${SCRIPT_DIR}/lib/common.sh"
 require_cmd bwa
 require_cmd samtools
