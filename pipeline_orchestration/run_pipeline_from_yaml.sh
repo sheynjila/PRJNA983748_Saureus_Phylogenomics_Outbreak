@@ -147,7 +147,13 @@ while IFS= read -r line; do
 
     case "${MODE}" in
         sbatch)
-            JOBID=$(sbatch --parsable "${DEP_ARGS[@]}" "${SCRIPT_PATH}")
+            # PIPELINE_SCRIPT_DIR tells the job its own real directory --
+            # Slurm copies a submitted batch script into its own spool
+            # directory before running it, so ${BASH_SOURCE[0]} inside the
+            # job never points at SCRIPTS_DIR on its own (real, confirmed
+            # failure: "source lib/common.sh: No such file or directory").
+            JOBID=$(sbatch --parsable --export=ALL,PIPELINE_SCRIPT_DIR="${SCRIPTS_DIR}" \
+                "${DEP_ARGS[@]}" "${SCRIPT_PATH}")
             ;;
         sbatch_wrap)
             WRAP_ARGS=(--job-name="step${ID}_wrapped" --ntasks=1
