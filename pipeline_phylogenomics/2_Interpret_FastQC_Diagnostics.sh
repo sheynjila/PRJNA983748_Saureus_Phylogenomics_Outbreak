@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 #SBATCH --job-name=phy02_fastqc
 #SBATCH --partition=batch
+#SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=4G
 #SBATCH --time=00:30:00

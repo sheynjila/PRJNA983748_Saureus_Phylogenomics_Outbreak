@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 #SBATCH --job-name=phy03_fetchall
 #SBATCH --partition=batch
+#SBATCH --ntasks=1
 #SBATCH --cpus-per-task=2
 #SBATCH --mem=4G
 #SBATCH --time=01:00:00

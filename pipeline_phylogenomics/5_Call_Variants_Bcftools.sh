@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 #SBATCH --job-name=phy05_call
 #SBATCH --partition=batch
+#SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=8G
 #SBATCH --time=02:00:00
