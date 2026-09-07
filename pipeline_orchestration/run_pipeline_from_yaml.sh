@@ -39,12 +39,14 @@
 # lightweight wrapped script -- override them for a heavier step like the
 # R analysis).
 #
-# This project's own scripts never hardcode --partition (see every
-# project's README: "Site-specific module load commands are intentionally
-# excluded because module names differ among clusters" -- the same
-# reasoning applies to partitions), so mode: sbatch_wrap does not add one
-# by default either. Add an optional `wrap_partition` field per step only
-# if your cluster's default partition can't be relied on.
+# mode: sbatch_wrap does NOT add a --partition by default, since a wrapped
+# script's own resources are declared entirely on the sbatch command line
+# (there's no #SBATCH header to inherit one from). Add `wrap_partition:
+# <name>` per step if your cluster requires an explicit partition --
+# confirmed true for teach-sub1 (real error: "You must specify a
+# partition (queue) to run in."), which is why this repo's own
+# pipeline_config.yaml sets `wrap_partition: batch` on its sbatch_wrap
+# step.
 #
 # Usage:
 #   bash run_pipeline_from_yaml.sh [path/to/pipeline_config.yaml] \

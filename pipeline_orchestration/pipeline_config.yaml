@@ -9,4 +9,4 @@ steps:
   - {id: 6, script: 6_Build_Core_SNP_Alignment.sh, mode: sbatch}
   - {id: 7, script: 7_Infer_Tree_IQTREE.sh, mode: sbatch}
   - {id: 8, script: 8_Interpret_Tree_And_Outbreak_Context.sh, mode: sbatch}
-  - {id: 9, script: 9_QC_Report_Generator.sh, mode: sbatch_wrap, wrap_cpus: 1, wrap_mem: 2G, wrap_time: 00:10:00}
+  - {id: 9, script: 9_QC_Report_Generator.sh, mode: sbatch_wrap, wrap_cpus: 1, wrap_mem: 2G, wrap_time: 00:10:00, wrap_partition: batch}
